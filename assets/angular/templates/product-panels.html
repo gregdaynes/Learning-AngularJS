@@ -1,0 +1,47 @@
+<!-- panel controller aliased as panel -->
+<section class="product__detail  detail  row">
+
+
+    <!-- DETAIL NAVIGATION -->
+    <ul class="detail__navigation  nav  nav-pills">
+
+        <!-- DETAIL NAV TABS -->
+        <!-- ng-class: add active class when tab selected -->
+        <!-- ng-click: set tab to X -->
+        <li ng-class="{ active: panel.isSelected(1) }">
+            <a ng-click="panel.selectTab(1)"
+               href>Description</a></li> <!-- /nav__tab -->
+
+        <li ng-class="{ active: panel.isSelected(2) }">
+            <a ng-click="panel.selectTab(2)"
+               href>Specifications</a></li> <!-- /nav__tab -->
+
+        <li ng-class="{ active: panel.isSelected(3) }">
+            <a ng-click="panel.selectTab(3)"
+               href>Reviews</a></li> <!-- /nav__tab -->
+
+    </ul> <!-- /detail__navigation -->
+
+    <!-- DETAIL PANEL -->
+    <!-- ng-show: show if tab = this panel -->
+    <div ng-show="panel.isSelected(1)"
+         class="detail__panel  panel">
+        <h4 class="panel__title">Description</h4>
+        <blockquote class="pane__content">{{ product.description }}</blockquote>
+    </div> <!-- /detail__panel -->
+
+    <div ng-show="panel.isSelected(2)"
+         class="detail__panel  panel">
+        <h4 class="panel__title">Specifications</h4>
+        <blockquote class="pane__content  bg-warning">None yet</blockquote>
+    </div> <!-- /detail__panel -->
+
+    <div ng-show="panel.isSelected(3)"
+         class="detail__panel  panel">
+      <product-reviews></product-reviews>
+
+
+    </div> <!-- /detail__panel -->
+
+
+</section> <!-- /product__details -->

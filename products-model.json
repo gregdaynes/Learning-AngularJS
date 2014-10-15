@@ -1,0 +1,75 @@
+[{
+    "name": "Dodecahedron",
+    "price": 2,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam suscipit quasi cupiditate tenetur error, sit saepe blanditiis, neque magnam nam ipsum quam, impedit voluptates quibusdam itaque consectetur assumenda quia quae!",
+    "canPurchase": true,
+    "soldOut": false,
+    "images": [
+        {
+            "full": "//placehold.it/300x300/3275c1/fff"
+        },
+        {
+            "full": "//placehold.it/300x300/d8eece/fff"
+        },
+        {
+            "full": "//placehold.it/300x300/d0e8f6/fff"
+        },
+        {
+            "full": "//placehold.it/300x300/efd5d6/fff"
+        }
+    ],
+    "reviews": [
+        {
+            "stars": 5,
+            "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem numquam quia voluptas, accusantium labore! Ea eos quam rerum cum, voluptatem, quidem autem cupiditate, suscipit praesentium amet dolorem, aliquam reiciendis repellendus?",
+            "author": "john@doe.com"
+        },
+        {
+            "stars": 4,
+            "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem numquam quia voluptas, accusantium labore! Ea eos quam rerum cum, voluptatem, quidem autem cupiditate, suscipit praesentium amet dolorem, aliquam reiciendis repellendus?",
+            "author": "jane@doe.com"
+        },
+        {
+            "stars": 3,
+            "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem numquam quia voluptas, accusantium labore! Ea eos quam rerum cum, voluptatem, quidem autem cupiditate, suscipit praesentium amet dolorem, aliquam reiciendis repellendus?",
+            "author": "joe@doe.com"
+        }
+    ]
+},
+{
+    "name": "Pentagonal Gem",
+    "price": 5.95,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facere dicta, cum tempora omnis inventore repellat. Ad, fuga, voluptatibus. Veritatis officia quod nisi, porro nam omnis iste consectetur sit reiciendis.",
+    "canPurchase": false,
+    "images": [
+        {
+            "full": "//placehold.it/300x300/3275c1/fff"
+        },
+        {
+            "full": "//placehold.it/300x300/d8eece/fff"
+        },
+        {
+            "full": "//placehold.it/300x300/d0e8f6/fff"
+        },
+        {
+            "full": "//placehold.it/300x300/efd5d6/fff"
+        }
+            ],
+            "reviews": [
+        {
+            "stars": 5,
+            "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem numquam quia voluptas, accusantium labore! Ea eos quam rerum cum, voluptatem, quidem autem cupiditate, suscipit praesentium amet dolorem, aliquam reiciendis repellendus?",
+            "author": "john@doe.com"
+        },
+        {
+            "stars": 4,
+            "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem numquam quia voluptas, accusantium labore! Ea eos quam rerum cum, voluptatem, quidem autem cupiditate, suscipit praesentium amet dolorem, aliquam reiciendis repellendus?",
+            "author": "jane@doe.com"
+        },
+        {
+            "stars": 3,
+            "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem numquam quia voluptas, accusantium labore! Ea eos quam rerum cum, voluptatem, quidem autem cupiditate, suscipit praesentium amet dolorem, aliquam reiciendis repellendus?",
+            "author": "joe@doe.com"
+        }
+    ]
+}]

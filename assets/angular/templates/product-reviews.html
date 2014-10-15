@@ -1,0 +1,65 @@
+<h4 class="panel__title">Reviews</h4>
+<blockquote ng-repeat="review in product.reviews"
+            class="pane__content">
+    <b>Stars: {{ review.rating }}</b>
+    <p>{{ review.review }}</p>
+    <cite>— {{ review.author }}<span ng-show="review.createdOn"> on {{ review.createdOn | date }}</span></cite>
+</blockquote>
+
+
+<form ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"
+      name="reviewForm"
+      novalidate>
+
+    <blockquote ng-show="reviewCtrl.review.stars || reviewCtrl.review.body || reviewCtrl.review.author">
+        <b>Stars: {{ reviewCtrl.review.rating }}</b>
+        <p>{{ reviewCtrl.review.review }}</p>
+        <cite>— {{ reviewCtrl.review.author }}</cite>
+    </blockquote>
+
+    <blockquote ng-if="reviewForm.$valid && reviewForm.$dirty"
+                class="bg-success">Review Looks good!</blockquote>
+    <blockquote ng-if="!reviewForm.$valid && reviewForm.$dirty"
+                class="bg-warning">Something is wrong with your review!</blockquote>
+
+    <div class="form-group">
+        <label for="rating">Rating</label>
+        <select ng-model="reviewCtrl.review.rating"
+                class="form-control"
+                id="rating"
+                name="rating"
+                required>
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="review">Review</label>
+        <textarea ng-model="reviewCtrl.review.review"
+                  class="form-control"
+                  id="review"
+                  name="review"
+                  required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="email">By:</label>
+        <input ng-model="reviewCtrl.review.author"
+               class="form-control"
+               name="email"
+               id="email"
+               type="email"
+               required>
+    </div>
+
+
+    <input type="hidden" ng-mode="reviewCtrl.review.product_id">
+
+
+    <button class="btn btn-primary"
+            type="submit">Submit</button>
+</form>

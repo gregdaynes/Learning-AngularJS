@@ -1,0 +1,24 @@
+<div class="product__gallery  col-sm-3">
+
+    <!-- SELECTED IMAGE -->
+    <!-- ng-src: first thumbnail image in product images array -->
+    <div class="row">
+        <div class="col-sm-12">
+            <img ng-src="{{ product.images[gallery.current].full }}"
+                 class="product__selected-image  img-rounded">
+        </div>
+    </div>
+
+    <!-- IMAGES LIST -->
+    <div class="product__image-list  row">
+        <div ng-repeat="image in product.images"
+             class="col-sm-3">
+            <a ng-click="gallery.selectImage($index)"
+               href>
+                <img ng-src="{{ product.images[$index].full }}"
+                     class="img-rounded">
+            </a>
+        </div>
+
+    </div>
+</div>

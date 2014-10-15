@@ -1,0 +1,15 @@
+img {
+    width: 100%;
+}
+
+.product__image-list {
+    margin-top: 10px;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
