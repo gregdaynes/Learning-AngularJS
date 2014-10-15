@@ -1,17 +1,18 @@
 <!doctype html>
-<html ng-app="store"
-      lang="en-GB" >
+<!-- NG-APP - store -->
+<html ng-app="store" lang="en-GB" >
 <head>
+    <!-- Generic head stuffs -->
     <meta charset="utf-8">
     <title>Store • Flatlanders</title>
 
-    <link rel="stylesheet"
-          href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet"
-          href="/assets/css/app.css">
+    <!-- Application stylesheets -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
 
 <!-- use store controller aliased as store -->
 <body ng-controller="StoreController as store">
+
 
     <!-- PAGE HEAD -->
     <header class="page-head  jumbotron">
@@ -19,19 +20,23 @@
             <h1>Flatlanders Crafted Gems
                 <small>An Angular Store</small></h1>
         </div>
-    </header> <!-- /page-head -->
+    </header>
+
+
+
 
 
     <!-- STORE LIST -->
     <ul class="store__list  container  list-group">
 
 
-        <!-- STORE ITEM -->
-        <!-- ng-repeat: each product in store, ordered by price low > high -->
+        <!--
+          - STORE ITEM
+          -
+          - ng-repeat: each product in store, ordered by price low > high
+          -->
         <li ng-repeat="product in store.products | orderBy:'price'"
             class="store__item  product  row  list-group-item">
-
-
 
 
             <!-- PRODUCT GALLERY -->
@@ -43,14 +48,18 @@
                 <!-- PRODUCT NAME -->
                 <product-title></product-title>
 
+
                 <!-- PRODUCT DETAILS -->
                 <product-panels></product-panels>
 
             </div>
 
-        </li> <!-- /store__item -->
+        </li>
 
-    </ul> <!-- /store__list -->
+    </ul>
+
+
+
 
 
     <!-- PAGE FOOT -->
@@ -58,15 +67,12 @@
         <p class="copyright  row">© 2014 Flatlanders Custom Crafted Gems Inc.</p>
     </footer>
 
+
+
+
+
+
     <!-- Angular -->
-    <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="/assets/angular/app.js"></script>
-    <script src="/assets/angular/products.js"></script>
-
-
-<!--
-  docs.angularjs.org
-  egghead.io
-  thinkster.io
-  kapeli.com/dash
--->
+    <script src="/bower_components/angularjs/angular.js"></script>
+    <script src="/app/store.js"></script>
+    <script src="/app/products.js"></script>

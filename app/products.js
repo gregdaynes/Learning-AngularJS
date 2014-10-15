@@ -1,7 +1,6 @@
 /**
  *
  */
-
 (function() {
     var app = angular.module('store-products', []);
 
@@ -9,33 +8,43 @@
         return {
             restrict: 'E', // type of directive - element
             // restrict: 'A', // type of directive - attribute
-            templateUrl: '/assets/angular/templates/product-title.html' // template to use
+            templateUrl: '/app/templates/product-title.html' // template to use
         };
     });
 
-    app.directive('productPanels', function() {
-        return {
-            restrict: 'E',
-            templateUrl: '/assets/angular/templates/product-panels.html',
-            controller: function() {
-                this.tab = 1;
 
+    /**
+     * Product Panels
+     *
+     * generate tabs and panels switching
+     */
+    app.directive('productPanels', function() {
+
+        return {
+
+            restrict: 'E', // element
+            templateUrl: '/app/templates/product-panels.html', // use template file
+            controller: function() { // build controller - no services
+                this.tab = 1; // initial selected tab
+
+                // function to select tab when clicked
                 this.selectTab = function(setTab) {
                     this.tab = setTab;
                 };
 
+                // function to test for active tab
                 this.isSelected = function(checkTab) {
                     return this.tab === checkTab;
                 };
             },
-            controllerAs: 'panel'
+            controllerAs: 'panel' // initialize controller as panel
         };
     });
 
     app.directive('productGallery', function() {
         return {
             restrict: 'E',
-            templateUrl: '/assets/angular/templates/product-gallery.html',
+            templateUrl: '/app/templates/product-gallery.html',
             controller: function() {
                 this.current = 0;
 
@@ -54,18 +63,21 @@
     app.directive('productReviews', function() {
         return {
             restrict: 'E',
-            templateUrl: '/assets/angular/templates/product-reviews.html',
-            controller: function($scope, $http) {
+            templateUrl: '/app/templates/product-reviews.html',
+            controller: function($scope, $http) { // attached services scope and http
                 this.review = {};
 
                 this.review.product_id = $scope.product.id;
 
-
+                // addReview
                 this.addReview = function(product) {
-                    this.review.createdOn = Date.now(); // add review date
-                    product.reviews.push(this.review);
 
-                   $http.post('/php/v1/postReview', this.review)
+                    // define createdOn as now
+                    // this.review.createdOn = Date.now(); // no longer necessary - done serverside
+                    product.reviews.push(this.review); // add review preview to page
+
+                    // post review to server for storage
+                    $http.post('/php/v1/postReview', this.review)
                         .success(function(data, status, headers, config)
                         {
                             console.log(status + ': ' + data);
@@ -76,12 +88,13 @@
                         });
 
 
+                    // @todo: add call to update review based on stored values in the database in case of truncation or code sanitization
 
 
-                    // this.review = {}; // clear out form
+                    this.review = {}; // clear out form
                 };
             },
-            controllerAs: 'reviewCtrl'
+            controllerAs: 'reviewCtrl' // initialize controller as reviewCtrl
         }
     })
 })();
